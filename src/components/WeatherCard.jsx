@@ -29,6 +29,7 @@ function WeatherCard() {
             {instance ? instance : "Loading..."}
           </div>
           <div className="weather-icon">
+            {/* Display appropriate weather icon based on the weather conditions */}
             {instance === "Clear"
               ? "☀"
               : instance === "Clouds"
@@ -45,11 +46,13 @@ function WeatherCard() {
         <input type="text" id="cityInput" placeholder="Enter city name" />
         <button
           onClick={() => {
+            //get the value of the city input field
             const cityInput = document.getElementById("cityInput").value;
-
+            //if the city input is invalid alert user
             if (cityInput.trim() === "" || cityInput.trim().length <= 1) {
               alert("Please enter a valid city");
             } else {
+              //set the city state to the value of the city input field
               setCity(cityInput);
             }
           }}
